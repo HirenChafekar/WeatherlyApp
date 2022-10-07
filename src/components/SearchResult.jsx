@@ -3,6 +3,7 @@ import ExtraDetails from "./ExtraDetails";
 import Svgs from "./Svgs";
 
 const SearchResult = () => {
+  const [tempOption, setTempOption] = useState(1);
   const [data, setData] = useState([
     {
       type: "Sunrise",
@@ -43,6 +44,13 @@ const SearchResult = () => {
       <div className="searchresult__feels_like">
         <Svgs src="night_rain" />
         <p>Feels like 26°C. Light rain. Gentle Breeze </p>
+      </div>
+      <div className="searchresult__temp_chart">
+        <div className="searchresult__days_options">
+          <p className={`${tempOption === 1 && 'selected'}`} onClick={() => setTempOption(1)}>Today</p>
+          <p className={`${tempOption === 2 && 'selected'}`} onClick={() => setTempOption(2)}>Tomorrow</p>
+          <p className={`${tempOption === 3 && 'selected'}`} onClick={() => setTempOption(3)}>10 days</p>
+        </div>
       </div>
       <div className="searchresult__other_details">
         {data.map((indi, index) => {
