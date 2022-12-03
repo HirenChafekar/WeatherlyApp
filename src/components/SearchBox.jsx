@@ -8,6 +8,7 @@ const SearchBox = ({
   setCitySearchRes
 }) => {
   const [noResStatement, setNoResStatement] = useState("Please search");
+  console.log('yes');
   function SearchForCity() {
     if (searchValue === "") {
       setCitySearchRes([]); //make the search array empty
